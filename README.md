@@ -65,11 +65,6 @@ The SQL analysis focuses on the following areas:
 - Investigating year-on-year emissions changes.
 - Examining electricity emissions intensity.
 
-### 4. International Comparisons
-- Comparing South Africa's electricity generation with other countries.
-- Investigating differences in renewable energy generation shares.
-- Comparing electricity emissions intensity across countries.
-
 ## Tableau Visualisation
 
 The next stage of the project involves developing an interactive Tableau dashboard to communicate the findings.
@@ -81,7 +76,6 @@ Planned visualisations include:
 - Coal versus renewable electricity generation.
 - Solar and wind generation growth.
 - Electricity-sector emissions trends.
-- International electricity generation comparisons.
 
 ## Key Findings
 
@@ -93,7 +87,7 @@ Planned visualisations include:
 South-Africa-Electricity-Analysis/
 │
 ├── Dataset/
-│   └── ember_electricity_data.csv
+│   └── release_generation_yearly_global..csv
 │
 ├── SQL/
 │   └── electricity_analysis.sql
