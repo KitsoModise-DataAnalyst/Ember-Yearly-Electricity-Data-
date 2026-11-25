@@ -16,7 +16,7 @@ The analysis aims to answer the following questions:
 2. What percentage of electricity generation comes from coal?
 3. How quickly are solar and wind generation growing?
 4. How have electricity-sector emissions changed over time?
-5. How does South Africa compare with other countries?
+
 
 ## Dataset
 
