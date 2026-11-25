@@ -30,6 +30,26 @@ WHERE area = 'South Africa'
 
 GROUP BY area;
 
+-- What percentage of electricity comes from Renewable?
+
+SELECT
+    area,
+    ROUND(
+        SUM(CASE
+            WHEN electricity_source != 'Coal'
+            THEN generation_twh
+            ELSE 0
+        END) * 100
+        / SUM(generation_twh),
+        2
+    ) AS solar_generation_percentage
+
+FROM electricity_data
+
+WHERE area = 'South Africa'
+
+GROUP BY area;
+
 
 -- How quickly are solar and wind generation growing?
 
