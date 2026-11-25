@@ -92,8 +92,7 @@ South-Africa-Electricity-Analysis/
 ├── SQL/
 │   └── electricity_analysis.sql
 │
-├── Tableau/
-│   └── dashboard_screenshots/
+├── emissions Visualisation.png
 │
 ├── Findings/
 │   └── project_findings.md
