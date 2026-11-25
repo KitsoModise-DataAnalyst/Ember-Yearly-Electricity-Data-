@@ -1,0 +1,74 @@
+-- How has South Africa's electricity generation changed over time?
+
+SELECT 
+    calendar_year,
+    ROUND(SUM(generation_twh), 2) AS Electricity_Generation
+FROM
+    electricity_data
+WHERE
+    area = 'South Africa'
+GROUP BY calendar_year;
+
+
+-- What percentage of electricity comes from coal?
+
+SELECT
+    area,
+    ROUND(
+        SUM(CASE
+            WHEN electricity_source = 'Coal'
+            THEN generation_twh
+            ELSE 0
+        END) * 100
+        / SUM(generation_twh),
+        2
+    ) AS coal_generation_percentage
+
+FROM electricity_data
+
+WHERE area = 'South Africa'
+
+GROUP BY area;
+
+
+-- How quickly are solar and wind generation growing?
+
+SELECT
+    calendar_year,
+    electricity_source,
+    ROUND(SUM(generation_twh), 2) AS generation_twh,
+    ROUND(SUM(generation_yoy_change_pct), 2) AS yoy_growth_pct
+
+FROM electricity_data
+
+WHERE area = 'South Africa'
+AND electricity_source IN ('Solar', 'Wind')
+
+GROUP BY
+    calendar_year,
+    electricity_source
+
+ORDER BY
+    calendar_year ASC,
+    electricity_source;
+
+
+
+-- How have electricity-sector emissions changed?
+
+SELECT
+    area,
+    calendar_year,
+    ROUND(SUM(emissions_mtco2e), 2) AS total_emissions_mtco2e,
+    ROUND(SUM(emissions_yoy_change_mtco2e), 2) AS emissions_change_mtco2e
+
+FROM electricity_data
+
+WHERE area = 'South Africa'
+
+GROUP BY
+    area,
+    calendar_year
+
+ORDER BY
+    calendar_year ASC;
